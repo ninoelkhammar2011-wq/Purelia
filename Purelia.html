@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Purelia — Hygiène et entretien pour la maison et les pros</title>
+<meta name="description" content="Purelia propose des produits d’hygiène et d’entretien pour la maison et pour les équipes de nettoyage. Demandez un devis.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{--night:#14232B;--gold:#D9B36A;--cream:#F5EBD5;--paper:#F5EBD5;--ink:#14232B;--muted:#4B5B63;--line:rgba(20,35,43,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1A2B33;--ink:#F5EBD5;--muted:#B9B3A2;--line:rgba(245,235,213,.22)}}
+:root[data-theme="dark"]{--paper:#1A2B33;--ink:#F5EBD5;--muted:#B9B3A2;--line:rgba(245,235,213,.22)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--night);z-index:10}
+h1,h2,h3{font-family:Oswald,Impact,sans-serif;font-weight:600;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--night);color:var(--cream);border-bottom:1px solid rgba(217,179,106,.25)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 22px Oswald,sans-serif;letter-spacing:.08em}
+nav{display:none;gap:28px;font-size:15px}
+nav a{text-decoration:none;color:#E4DAC4}
+nav a:hover{color:var(--gold)}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:500;text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s;cursor:pointer;font-family:inherit;font-size:17px}
+.btn.gold{background:var(--gold);color:var(--night)}
+.btn.gold:hover{background:var(--cream);border-color:var(--cream)}
+.btn.line{color:var(--cream);background:none}
+.btn.line:hover{background:var(--gold);color:var(--night)}
+header .btn{padding:8px 18px;font-size:15px}
+.hero{background:var(--night);color:var(--cream);overflow:hidden;padding:64px 0 56px}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+.hero h1{font-size:clamp(50px,11vw,104px)}
+.hero p{max-width:29em;font-size:19px;margin:22px 0 30px;color:#E4DAC4}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero svg{width:100%;max-width:460px;justify-self:center}
+section{padding:80px 0}
+h2{font-size:clamp(34px,6vw,54px);margin-bottom:14px}
+.lead{max-width:36em;color:var(--muted);margin:0 0 34px}
+.tabs{display:inline-flex;border:2px solid var(--ink);border-radius:999px;padding:3px;margin-bottom:30px}
+.tabs button{font:500 16px "DM Sans",sans-serif;color:var(--ink);background:none;border:0;border-radius:999px;padding:10px 28px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.panel h3{font-size:30px;margin-bottom:8px}
+.panel>p{max-width:36em;color:var(--muted);margin:0 0 22px}
+.panel ul{list-style:none;margin:0;padding:0;max-width:760px}
+.panel li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 24px;padding:17px 0;border-top:1px solid var(--line)}
+.panel li:last-child{border-bottom:1px solid var(--line)}
+.panel li b{font:500 23px Oswald,sans-serif}
+.panel li span{color:var(--muted)}
+.note{margin-top:18px;font-size:15px;color:var(--muted)}
+.sectors{background:var(--night);color:var(--cream)}
+.sectors h2{color:var(--cream)}
+.sectors .lead{color:#B9B3A2}
+.sectors ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 28px}
+.sectors li{font:500 clamp(26px,4vw,34px) Oswald,sans-serif;padding:18px 0;border-top:1px solid rgba(217,179,106,.4)}
+.values{background:var(--gold);color:var(--night)}
+.values .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+.values h3{font-size:34px;border-top:3px solid var(--night);padding-top:14px;margin-bottom:8px}
+.values p{margin:0}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--line);padding-top:16px}
+.steps li::before{content:counter(s);font:600 46px Oswald,sans-serif;color:var(--gold);display:block;line-height:1;margin-bottom:10px}
+.steps b{font:500 23px Oswald,sans-serif;display:block;margin-bottom:4px}
+.steps span{color:var(--muted)}
+.faq{background:color-mix(in srgb,var(--paper) 92%,var(--ink))}
+details{border-top:1px solid var(--line);max-width:760px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:20px 36px 20px 0;font:500 23px Oswald,sans-serif;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:30px;color:var(--gold);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 22px;color:var(--muted);max-width:36em}
+.contact{background:var(--night);color:var(--cream)}
+.contact .wrap{display:grid;gap:40px}
+.contact .lead{color:#B9B3A2}
+form{display:grid;gap:16px;max-width:560px}
+label{display:grid;gap:6px;font-size:15px;color:#E4DAC4}
+input,select,textarea{font:400 17px "DM Sans",sans-serif;color:var(--cream);background:#1D313A;border:1px solid rgba(245,235,213,.3);border-radius:10px;padding:12px 14px;width:100%}
+textarea{min-height:120px;resize:vertical}
+.contact small{display:block;margin-top:14px;color:#B9B3A2}
+footer{background:#0E1A20;color:#B9B3A2;padding:44px 0 34px;font-size:15px}
+footer .wrap{display:grid;gap:26px}
+footer .cols{display:flex;flex-wrap:wrap;gap:12px 40px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--gold)}
+footer .legal{border-top:1px solid rgba(245,235,213,.14);padding-top:18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px}
+@media (min-width:860px){nav{display:flex}.hero{padding:104px 0 96px}.hero .wrap{grid-template-columns:1.1fr .9fr}.contact .wrap{grid-template-columns:.9fr 1.1fr}section{padding:104px 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,summary::after{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="#top" aria-label="Purelia, accueil"><svg width="22" height="28" viewBox="150 30 80 100" aria-hidden="true"><path d="M190 36C190 36 150 82 150 106A40 40 0 0 0 230 106C230 82 190 36 190 36Z" fill="#D9B36A"/><path d="M173 106L186 119L208 93" fill="none" stroke="#14232B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>PURELIA</a>
+<nav aria-label="Navigation principale"><a href="#gammes">Gammes</a><a href="#secteurs">Secteurs</a><a href="#fonctionnement">Fonctionnement</a><a href="#faq">Questions</a></nav>
+<a class="btn gold" href="#contact">Demander un devis</a>
+</div>
+</header>
+<main id="top">
+<div class="hero">
+<div class="wrap">
+<div>
+<h1>Le propre,<br>tout simplement.</h1>
+<p>Des produits d’hygiène et d’entretien pour la maison, et pour les équipes de nettoyage qui travaillent chaque jour.</p>
+<div class="btns"><a class="btn gold" href="#gammes">Découvrir les gammes</a><a class="btn line" href="#contact">Demander un devis</a></div>
+</div>
+<svg viewBox="0 0 420 290" role="img" aria-label="Un flacon spray, un bidon de 5 litres et un flacon posés sur une étagère">
+<circle cx="210" cy="150" r="128" fill="none" stroke="#F5EBD5" stroke-opacity=".22" stroke-width="2"/>
+<line x1="20" y1="252" x2="400" y2="252" stroke="#D9B36A" stroke-width="3"/>
+<g transform="translate(62,140) scale(1.3)"><rect x="16" y="4" width="26" height="10" rx="3" fill="#D9B36A"/><rect x="42" y="6" width="12" height="5" rx="2" fill="#D9B36A"/><rect x="23" y="14" width="12" height="10" fill="#D9B36A"/><rect x="10" y="24" width="44" height="62" rx="8" fill="#D9B36A"/><rect x="17" y="44" width="30" height="28" rx="4" fill="#F5EBD5"/><path d="M24 58L30 64L40 52" fill="none" stroke="#14232B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M182 152V130Q182 120 192 120H222Q232 120 232 130V152" fill="none" stroke="#D9B36A" stroke-width="10"/>
+<rect x="166" y="152" width="96" height="100" rx="10" fill="#D9B36A"/><rect x="240" y="140" width="16" height="12" fill="#D9B36A"/>
+<rect x="181" y="174" width="66" height="54" rx="4" fill="#F5EBD5"/><text x="214" y="212" text-anchor="middle" font-size="28" fill="#14232B" font-family="Oswald,Arial,sans-serif" font-weight="600">5 L</text>
+<rect x="302" y="140" width="28" height="12" rx="3" fill="#D9B36A"/><rect x="308" y="150" width="16" height="22" fill="#D9B36A"/><rect x="292" y="170" width="48" height="82" rx="8" fill="#D9B36A"/>
+<rect x="298" y="192" width="36" height="34" rx="3" fill="#F5EBD5"/><path d="M306 209L312 215L325 200" fill="none" stroke="#14232B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+</div>
+
+<section id="gammes">
+<div class="wrap">
+<h2>Une gamme pour chaque usage</h2>
+<p class="lead">Choisissez la gamme qui correspond à vos besoins : l’entretien du quotidien à la maison, ou le travail en continu des équipes professionnelles.</p>
+<div class="tabs" role="tablist" aria-label="Choisir une gamme">
+<button role="tab" id="tab-maison" aria-selected="true" aria-controls="p-maison">Maison</button>
+<button role="tab" id="tab-pro" aria-selected="false" aria-controls="p-pro" tabindex="-1">Pro</button>
+</div>
+<div class="panel" id="p-maison" role="tabpanel" aria-labelledby="tab-maison">
+<h3>Pour la maison</h3>
+<p>Des produits d’entretien du quotidien, simples à utiliser, de la cuisine à la salle de bain.</p>
+<ul>
+<li><b>Multi-surfaces</b><span>Cuisine, plans de travail, salle de bain</span></li>
+<li><b>Vitres et miroirs</b><span>Pour toutes les surfaces vitrées</span></li>
+<li><b>Sols</b><span>Carrelage et sols lavables</span></li>
+<li><b>Sanitaires</b><span>Nettoyage et détartrage</span></li>
+</ul>
+</div>
+<div class="panel" id="p-pro" role="tabpanel" aria-labelledby="tab-pro" hidden>
+<h3>Pour les équipes de nettoyage</h3>
+<p>Des produits en grands conditionnements, pensés pour un usage quotidien en entreprise, commerce, restauration et collectivité.</p>
+<ul>
+<li><b>Dégraissant</b><span>Cuisines et plans de travail</span></li>
+<li><b>Désinfectant</b><span>Surfaces à fort passage</span></li>
+<li><b>Détartrant</b><span>Sanitaires</span></li>
+<li><b>Nettoyant sols</b><span>Grandes surfaces</span></li>
+</ul>
+<p class="note">Fiches techniques et fiches de données de sécurité disponibles sur demande.</p>
+</div>
+</div>
+</section>
+
+<section class="sectors" id="secteurs">
+<div class="wrap">
+<h2>Au service des professionnels</h2>
+<p class="lead">La gamme Pro accompagne les équipes de nettoyage dans les lieux où l’hygiène se joue tous les jours.</p>
+<ul><li>Restauration</li><li>Hôtellerie</li><li>Bureaux</li><li>Commerces</li><li>Collectivités</li></ul>
+</div>
+</section>
+
+<section class="values">
+<div class="wrap">
+<h2>Notre façon de travailler</h2>
+<div class="grid">
+<div><h3>Simple</h3><p>Des produits clairs, un mode d’emploi lisible, aucun jargon.</p></div>
+<div><h3>Fiable</h3><p>Un produit qui se comporte de la même façon d’une commande à l’autre.</p></div>
+<div><h3>À l’écoute</h3><p>Un échange direct pour choisir les bons produits selon vos locaux.</p></div>
+</div>
+</div>
+</section>
+
+<section id="fonctionnement">
+<div class="wrap">
+<h2>Comment ça se passe</h2>
+<p class="lead">De votre premier message à la livraison, quatre étapes.</p>
+<ol class="steps">
+<li><b>Vous nous écrivez</b><span>Quelques lignes sur vos locaux et vos besoins.</span></li>
+<li><b>Nous étudions</b><span>Surfaces, fréquence de nettoyage, produits déjà utilisés.</span></li>
+<li><b>Vous recevez un devis</b><span>Une proposition claire, sans engagement.</span></li>
+<li><b>Vous êtes livré</b><span>Les produits arrivent, avec leurs fiches.</span></li>
+</ol>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="wrap">
+<h2>Questions fréquentes</h2>
+<details><summary>Quelle différence entre Maison et Pro ?</summary><p>La gamme Maison est conçue pour l’entretien du quotidien à domicile. La gamme Pro est pensée pour les équipes de nettoyage, avec des conditionnements plus grands et un usage intensif.</p></details>
+<details><summary>Comment obtenir un devis ?</summary><p>Remplissez le formulaire de contact en bas de page. Indiquez vos locaux, le nombre de personnes et vos besoins : nous revenons vers vous avec une proposition.</p></details>
+<details><summary>Où trouver les fiches de sécurité ?</summary><p>Les fiches techniques et les fiches de données de sécurité sont disponibles sur demande pour chaque produit de la gamme Pro.</p></details>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap">
+<div>
+<h2>Parlons de vos locaux</h2>
+<p class="lead">Dites-nous quels espaces vous entretenez et avec combien de personnes. Nous vous répondons avec une proposition adaptée, sans engagement.</p>
+</div>
+<div>
+<form id="f" onsubmit="return false">
+<label>Nom<input id="n" autocomplete="name" placeholder="Votre nom"></label>
+<label>Société<input id="s" autocomplete="organization" placeholder="Nom de votre société (facultatif)"></label>
+<label>Vous cherchez<select id="t"><option>Gamme Pro</option><option>Gamme Maison</option></select></label>
+<label>Message<textarea id="m" placeholder="Vos locaux, le nombre de personnes, vos besoins"></textarea></label>
+<a class="btn gold" id="send" href="mailto:contact@purelia.fr">Envoyer par e-mail</a>
+</form>
+<small>Le bouton ouvre votre messagerie avec le message prêt à envoyer à contact@purelia.fr.</small>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="brand" style="color:var(--cream)"><svg width="22" height="28" viewBox="150 30 80 100" aria-hidden="true"><path d="M190 36C190 36 150 82 150 106A40 40 0 0 0 230 106C230 82 190 36 190 36Z" fill="#D9B36A"/><path d="M173 106L186 119L208 93" fill="none" stroke="#14232B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>PURELIA</div>
+<div class="cols"><a href="#gammes">Gammes</a><a href="#secteurs">Secteurs</a><a href="#fonctionnement">Fonctionnement</a><a href="#faq">Questions</a><a href="#contact">Contact</a></div>
+<div class="legal"><span>© 2026 Purelia · Hygiène et entretien pour tous</span><span>contact@purelia.fr</span></div>
+</div>
+</footer>
+<script>
+(function(){
+var tabs=document.querySelectorAll('[role="tab"]');
+function show(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on?'true':'false');b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});}
+tabs.forEach(function(b){
+b.addEventListener('click',function(){show(b)});
+b.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=b===tabs[0]?tabs[1]:tabs[0];show(n);n.focus();}});
+});
+var ids=['n','s','t','m'].map(function(i){return document.getElementById(i)});
+var send=document.getElementById('send');
+function upd(){
+var v=ids.map(function(e){return e.value.trim()});
+var body='Bonjour,\n\nNom : '+v[0]+'\nSociété : '+v[1]+'\nIntérêt : '+v[2]+'\n\n'+v[3]+'\n';
+send.href='mailto:contact@purelia.fr?subject='+encodeURIComponent('Demande de devis — '+v[2])+'&body='+encodeURIComponent(body);
+}
+ids.forEach(function(e){e.addEventListener('input',upd);e.addEventListener('change',upd)});
+upd();
+})();
+</script>
+</body>
+</html>
